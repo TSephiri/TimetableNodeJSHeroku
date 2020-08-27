@@ -30,7 +30,12 @@ app.use('/api/students',studentsController);
 app.use('/api/class',classController);
 app.use('/api/update',studentsControllerUpdate);
 
+// use the express-static middleware
+app.use(express.static("public"))
 
+app.get("/", function (req, res) {
+    res.send("<h1>Timetable2020!</h1>")
+  })
 
 const PORT = process.env.PORT || 3000;
 
